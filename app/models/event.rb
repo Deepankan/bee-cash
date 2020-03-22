@@ -15,7 +15,6 @@ class Event < ApplicationRecord
 	validates :end_date, presence: { message: "Event End date can't be blank"}
 	validates :contact_email, format: { with: EMAIL_REGEX, message: "Wrong Email Id"}
 	validates :contact_no, format: { with: PHONE_NUMBER_REGEX, message: "Wrong Contact No Number", :multiline => true }, length: { maximum: 11, message: "Phone Number can't be greater than 11 character" }
-
 	def self.get_event_detail(user)
 		Event.order(created_at: :desc).map{|h| {id: h.id, name: h.name, start_date: get_date_format(h.start_date),\
 		end_date: get_date_format(h.end_date), fees: h.fees, created_by_id: h.created_by, created_by: (User.find_by_id(h.created_by).name if User.find_by_id(h.created_by)),\
