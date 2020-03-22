@@ -1,0 +1,22 @@
+development:
+  adapter: postgresql
+  username: postgres
+  password: my_password
+  database: event_management
+qa:
+  adapter: postgresql
+  username: postgres
+  password: my_password
+  database: event_management
+
+production:
+  adapter: postgresql
+  username: postgres
+  password: my_password
+  database: event_management
+
+test:
+  adapter: postgresql
+  username: postgres
+  password: my_password
+  database: event_management
